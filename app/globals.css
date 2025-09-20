@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Meddon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+
+/* Root variables */
+:root {
+  --background: #ffe8db;
+  --foreground: #171717;
+  --font-title: "Meddon", serif;
+  --font-sans: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+@font-face {
+  font-family: "Alice";
+  src: url("/fonts/ALICE-REGULAR.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calibri";
+  src: url("/fonts/CALIBRI.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "English111";
+  src: url("/fonts/E111VIVA.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Trajanpro";
+  src: url("/fonts/TRAJANPRO-REGULAR.ttf") format("truetype");
+}
+
+.font-alice {
+  font-family: "Alice", cursive;
+}
+
+.font-calibri {
+  font-family: "Calibri", serif;
+}
+
+.font-trajanpro {
+  font-family: "Trajanpro", cursive;
+}
+
+/* Global body font */
+body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.42857143;
+}
+
+/* Title class */
+.title {
+  font-family: var(--font-title);
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 45px;
+  letter-spacing: 0px;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+/* Subhead class */
+.subhead {
+  font-family: var(--font-title);
+  font-size: 24px;
+  line-height: 35px;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .title {
+    font-size: 40px;
+    line-height: 30px;
+  }
+  .subhead {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .welcome {
+    font-size: 32px;
+    line-height: 24px;
+  }
+}
+
+/* Optional: apply Meddon to h1 by default */
+h1 {
+  font-family: var(--font-title);
+  font-size: inherit;
+  line-height: 45px;
+  font-weight: normal;
+  margin: 0.67em 0;
+}
+@media (max-width: 640px) {
+  h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.font-handwriting {
+  font-family: "Dancing Script", cursive;
+}
+.font-polaroid {
+  font-family: "Kalam", cursive;
+}
+
+.polaroid-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.polaroid-rotate {
+  transform: rotate(-2deg);
+  transition: all 0.3s ease-out;
+}
+
+.polaroid-rotate:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+  .story-title-desktop {
+    color: #444;
+    font-size: 24px;
+    font-family: "Cedarville Cursive";
+    font-style: normal;
+    text-transform: none;
+    text-align: left;
+    padding-top: 20px;
+    white-space: pre-line;
+    word-wrap: break-word;
+  }
+}
+
+/* Mobile & Tablet Styles */
+@media (max-width: 1023px) {
+  .story-title-mobile {
+    color: #050357;
+    font-family: "Cedarville Cursive";
+    font-style: normal;
+    font-size: 1.3em;
+    line-height: 1.3;
+  }
+}
+
+.hero-names {
+  font-family: "English111", cursive;
+  font-size: clamp(3rem, 4vw, 6rem); /* min 4rem, scales with 8vw, max 12rem */
+  line-height: 1;
+  text-align: center;
+  color: #fff;
+}
