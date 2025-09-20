@@ -45,6 +45,10 @@
   font-family: "Trajanpro", cursive;
 }
 
+.font-english {
+  font-family: "English111";
+}
+
 /* Global body font */
 body {
   font-family: var(--font-sans);

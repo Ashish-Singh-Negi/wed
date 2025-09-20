@@ -47,7 +47,7 @@ export default function WelcomePage() {
     "
               >
                 <div className="flex flex-col justify-center gap-6">
-                  <h1 className="text-mobile-title font-alice lg:text-desktop-title leading-tight text-[#c4a882]">
+                  <h1 className="title text-mobile-title lg:text-desktop-title leading-tight text-[#c4a882]">
                     Welcome
                   </h1>
 

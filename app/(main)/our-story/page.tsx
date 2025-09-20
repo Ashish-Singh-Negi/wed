@@ -39,72 +39,84 @@ export default function OurStoryPage() {
       date: "June 23, 2024",
       image: "/ascot.jpg",
       content: `This is us, celebrating a perfect day at Ascot. We were both so happy, dressed up and ready to enjoy the day, and this photo captures our joy.`,
+      positon: "right-10",
     },
     {
       title: "Ria meets Vivek's Family",
       date: "December 15, 2024",
       image: "/ria-meets-vivek-family.jpg",
       content: `Here is a special moment we'll never forget: the day Ria met my family. On December 15, 2024, we all got together, and it felt so natural, like the beginning of something truly wonderful.`,
+      positon: "left-50",
     },
     {
       title: "Vivek meets Ria's Family",
       date: "December 23, 2024",
       image: "/vivek-meets-ria-family.jpg",
       content: `New beginnings and growing families! We absolutely loved this moment on December 23, 2024, when Vivek officially met Ria's family. Surrounded by holiday cheer and a beautiful Christmas tree, it was the perfect start to our combined family journey.`,
+      positon: "right-28",
     },
     {
       title: "Isle of Wight Excursion",
       date: "June 22, 2025",
       image: "/isle-of-wight-excursion.jpg",
       content: `One of our favorite memories! This was us, so happy and ready for fun on our Isle of Wight trip on June 22, 2025. We loved every moment of sailing, exploring, and just being together, soaking in the beautiful views and making memories that last a lifetime.`,
+      positon: "left-80",
     },
     {
       title: "Ria passes!",
       date: "July 18, 2025",
       image: "/ria-passes.jpg",
       content: `A day to be proud of! This photo captures the moment on July 18, 2025, when we celebrated Ria's incredible achievement. It was a day of hard work paying off, marking a big milestone in our lives and a beautiful step forward in our journey together. What a special day to celebrate!`,
+      positon: "right-10",
     },
     {
       title: "Races in Singapore",
       date: "July 27, 2025",
       image: "/races-in-singapore.jpg",
       content: `Who said races are just for race cars? We took a trip to Singapore on July 27, 2025, and had an absolute blast on the Skyline Luge! This photo captures our competitive, fun-loving spirit. It was the perfect adventure and a reminder that our life together is a thrilling ride.`,
+      positon: "left-50",
     },
     {
       title: "Universal Roller Coaster",
       date: "July 27, 2025",
       image: "/universal-rollercoaster.jpg",
       content: `Ready for a wild ride! This photo perfectly sums up our journey together—full of excitement and adventure. Here we are, all smiles in front of the iconic Universal Studios globe in Singapore on July 27, 2025. It's just a taste of the thrilling life we're building, and we can't wait for you to be a part of it.`,
+      positon: "right-0",
     },
     {
       title: "She said yes!",
       date: "July 28, 2025",
       image: "/she-says-yes.jpg",
       content: `On July 28, 2025, our biggest adventure began. With the sooting sun as our witness and the water gently swaying beneath us, Vivek got down on one knee and asked Ria to marry him. This moment, captured in front of a heart-shaped arch and a 'Marry Me' sign, is the start of our journey toward happily ever after. We cannot wait to celebrate with you!`,
+      positon: "left-60",
     },
     {
       title: "Celebrating engaged life",
       date: "July 28, 2025",
       image: "/celebrating-engaged-life.jpg",
       content: `Every celebration feels more special when we're together...`,
+      positon: "right-20",
     },
     {
       title: "Roka-fied",
       date: "July 29, 2025",
       image: "/roka-fied.jpg",
       content: `Every celebration feels more special when we're together...`,
+      positon: "left-40",
     },
     {
       title: "She said yes again!",
       date: "July 30, 2025",
       image: "/she-says-yes-again.jpg",
       content: `Every celebration feels more special when we're together...`,
+      positon: "right-14",
     },
     {
       title: "Trip to Liverpool",
       date: "September 09, 2025",
       image: "/trip-to-liverpool.jpg",
       content: `Every celebration feels more special when we're together...`,
+      positon: "left-96",
     },
   ];
 
@@ -140,7 +152,7 @@ export default function OurStoryPage() {
         </div>
 
         {/* Thumbnail selector (desktop only) */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -167,7 +179,7 @@ export default function OurStoryPage() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Story display */}
         <div className="pt-10 flex items-center px-4 sm:px-6 lg:px-8">
@@ -210,39 +222,64 @@ export default function OurStoryPage() {
             </div>
 
             {/* Single story card for desktop */}
-            <div
-              key={currentStory}
-              className="hidden lg:block bg-white p-4 sm:p-6 shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full max-w-sm lg:w-80 flex-shrink-0"
-            >
-              <div
-                className="mb-4 sm:mb-6 relative cursor-pointer"
-                onClick={() => setIsModalOpen(true)}
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={stories[currentStory].image}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
+
+            <section className="relative h-[7200px] w-full">
+              {stories.map((story, index) => (
+                <>
+                  <div
+                    key={`content-${currentStory}`}
+                    className="lg:flex lg:flex-1 flex-col items-start text-white hidden px-32 pt-4 lg:pt-8 max-w-2xl text-center lg:text-left"
                   >
-                    <Image
-                      src={stories[currentStory].image || "/placeholder.svg"}
-                      alt={stories[currentStory].title}
-                      width={400}
-                      height={400}
-                      className="w-full h-48 sm:h-64 lg:h-72 object-cover"
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-              <h3 className="story-title-desktop font-cursive text-center">
-                {stories[currentStory].title}
-              </h3>
-            </div>
+                    <h2 className="text-lg sm:text-xl font-medium mb-4 sm:mb-6 text-white">
+                      {stories[currentStory].date}
+                    </h2>
+                    <div className="text-sm sm:text-base leading-relaxed font-light space-y-3 sm:space-y-4">
+                      {stories[currentStory].content
+                        .split("\n\n")
+                        .map((paragraph, index) => (
+                          <p key={index}>{paragraph}</p>
+                        ))}
+                    </div>
+                  </div>
+                  <div
+                    key={story.image + story.title}
+                    style={{
+                      top: `${index * 600}px`,
+                    }}
+                    className={`absolute ${story.positon}  hidden lg:block bg-white p-4 sm:p-6 shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full max-w-sm lg:w-80 flex-shrink-0`}
+                  >
+                    <div
+                      className="mb-4 sm:mb-6 relative cursor-pointer"
+                      onClick={() => setIsModalOpen(true)}
+                    >
+                      <AnimatePresence mode="wait">
+                        <motion.div
+                          key={story.image}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <Image
+                            src={story.image || "/placeholder.svg"}
+                            alt={story.title}
+                            width={400}
+                            height={400}
+                            className="w-full h-48 sm:h-64 lg:h-72 object-cover"
+                          />
+                        </motion.div>
+                      </AnimatePresence>
+                    </div>
+                    <h3 className="story-title-desktop font-cursive text-center">
+                      {story.title}
+                    </h3>
+                  </div>
+                </>
+              ))}
+            </section>
 
             {/* Story text (desktop only) */}
-            <div
+            {/* <div
               key={`content-${currentStory}`}
               className="lg:flex lg:flex-1 flex-col items-start text-white hidden px-32 pt-4 lg:pt-8 max-w-2xl text-center lg:text-left"
             >
@@ -256,7 +293,7 @@ export default function OurStoryPage() {
                     <p key={index}>{paragraph}</p>
                   ))}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -292,10 +329,10 @@ export default function OurStoryPage() {
 
                 {/* Right: Story info */}
                 <div
-                  className="relative w-full h-[20%] lg:h-full lg:w-1/2 
-                  flex flex-col justify-end lg:justify-center 
-                  items-center lg:items-start 
-                  bg-gradient-to-t from-black/80 via-black/40 to-transparent lg:bg-transparent 
+                  className="relative w-full h-[20%] lg:h-full lg:w-1/2
+                  flex flex-col justify-end lg:justify-center
+                  items-center lg:items-start
+                  bg-gradient-to-t from-black/80 via-black/40 to-transparent lg:bg-transparent
                   p-6 md:p-8"
                 >
                   <div className="max-w-2xl lg:mx-0 text-center lg:text-left">
