@@ -184,7 +184,7 @@ export default function OurStoryPage() {
 
         {/* Story display */}
         <div className="pt-10 flex items-center px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-left justify-center max-w-7xl w-full">
+          <div className="flex flex-col lg:flex-row items-left justify-center w-full">
             {/* Grid for mobile + tablet */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
               {stories.map((story, index) => (
@@ -222,7 +222,7 @@ export default function OurStoryPage() {
               ))}
             </div>
 
-            <section className="lg:h-[9200px] w-full flex flex-col">
+            <section className="relative lg:h-[9400px] w-full flex flex-col">
               {stories.map((story, index) => (
                 <div
                   key={story.image}
