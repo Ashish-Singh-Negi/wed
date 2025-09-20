@@ -143,14 +143,14 @@ export default function OurStoryPage() {
     <div className="min-h-screen lg:bg-[#bba582]/80 relative overflow-hidden">
       <Navigation />
       <div className="pt-[12%]">
-        <div className="hidden lg:block">
+        {/* <div className="hidden lg:block">
           <SideNavigation
             currentStory={currentStory}
             totalStories={stories.length}
             onPreviousStory={handlePreviousStory}
             onNextStory={handleNextStory}
           />
-        </div>
+        </div> */}
 
         {/* Thumbnail selector (desktop only) */}
         {/* <motion.div
