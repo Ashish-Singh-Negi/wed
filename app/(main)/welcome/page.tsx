@@ -63,8 +63,8 @@ export default function WelcomePage() {
                     </p>
                     <p>
                       Please join us in celebrating our wedding on{" "}
-                      <span className="font-semibold text-[#c4a882]">
-                        March 05th - 06th, 2026,
+                      <span className="font-semibold font-alice text-[#c4a882]">
+                        March 05th - 06th, 2026
                       </span>{" "}
                       as we gather to share love, laughter, and blessings.
                     </p>
