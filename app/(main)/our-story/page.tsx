@@ -223,7 +223,7 @@ export default function OurStoryPage() {
 
             {/* Single story card for desktop */}
 
-            <section className="relative h-[7200px] w-full">
+            <section className="relative lg:h-[7200px] w-full">
               {stories.map((story, index) => (
                 <>
                   <div
