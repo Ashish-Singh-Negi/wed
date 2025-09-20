@@ -46,7 +46,7 @@ export default function WelcomePage() {
       max-w-xl mx-auto space-y-4 lg:h-full text-gray-700 text-base leading-relaxed
     "
               >
-                <div className="flex flex-col justify-center gap-6">
+                <div className="flex flex-col font-alice justify-center gap-6">
                   <h1 className="title text-mobile-title lg:text-desktop-title leading-tight text-[#c4a882]">
                     Welcome
                   </h1>
@@ -63,7 +63,7 @@ export default function WelcomePage() {
                     </p>
                     <p>
                       Please join us in celebrating our wedding on{" "}
-                      <span className="font-semibold font-alice text-[#c4a882]">
+                      <span className="font-semibold text-[#c4a882]">
                         March 05th - 06th, 2026
                       </span>{" "}
                       as we gather to share love, laughter, and blessings.
