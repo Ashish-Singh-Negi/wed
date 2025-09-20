@@ -9,6 +9,11 @@
     sans-serif;
 }
 
+@font-face {
+  font-family: "English111";
+  src: url("../../../public/E111VIVA.TTF") format("truetype");
+}
+
 body {
   font-family: var(--font-sans);
   font-size: 14px;
@@ -18,7 +23,7 @@ body {
 }
 
 .title {
-  font-family: var(--font-title);
+  font-family: "English111";
   font-size: 34px;
   line-height: 45px;
   margin: 0;

@@ -44,7 +44,7 @@ export default function Navigation() {
               Ria & Vivek - Wedding Celebrations
             </h1>
             <p className="text-amber-800 text-sm lg:text-base tracking-widest uppercase">
-              March 06, 2026
+              March 06<sup>Th</sup>, 2026
             </p>
           </div>
 
