@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import SideNavigation from "../../components/SideNavigation";
 import Navigation from "../../components/Navigation";
 import Image from "next/image";
+import StoryCard from "./components/StoryCard";
 
 export default function OurStoryPage() {
   const [currentStory, setCurrentStory] = useState(0);
@@ -39,7 +40,7 @@ export default function OurStoryPage() {
       date: "June 23, 2024",
       image: "/ascot.jpg",
       content: `This is us, celebrating a perfect day at Ascot. We were both so happy, dressed up and ready to enjoy the day, and this photo captures our joy.`,
-      positon: "right-10",
+      positon: "right-96",
     },
     {
       title: "Ria meets Vivek's Family",
@@ -53,7 +54,7 @@ export default function OurStoryPage() {
       date: "December 23, 2024",
       image: "/vivek-meets-ria-family.jpg",
       content: `New beginnings and growing families! We absolutely loved this moment on December 23, 2024, when Vivek officially met Ria's family. Surrounded by holiday cheer and a beautiful Christmas tree, it was the perfect start to our combined family journey.`,
-      positon: "right-28",
+      positon: "right-40",
     },
     {
       title: "Isle of Wight Excursion",
@@ -67,7 +68,7 @@ export default function OurStoryPage() {
       date: "July 18, 2025",
       image: "/ria-passes.jpg",
       content: `A day to be proud of! This photo captures the moment on July 18, 2025, when we celebrated Ria's incredible achievement. It was a day of hard work paying off, marking a big milestone in our lives and a beautiful step forward in our journey together. What a special day to celebrate!`,
-      positon: "right-10",
+      positon: "right-60",
     },
     {
       title: "Races in Singapore",
@@ -81,7 +82,7 @@ export default function OurStoryPage() {
       date: "July 27, 2025",
       image: "/universal-rollercoaster.jpg",
       content: `Ready for a wild ride! This photo perfectly sums up our journey together—full of excitement and adventure. Here we are, all smiles in front of the iconic Universal Studios globe in Singapore on July 27, 2025. It's just a taste of the thrilling life we're building, and we can't wait for you to be a part of it.`,
-      positon: "right-0",
+      positon: "right-50",
     },
     {
       title: "She said yes!",
@@ -95,21 +96,21 @@ export default function OurStoryPage() {
       date: "July 28, 2025",
       image: "/celebrating-engaged-life.jpg",
       content: `Every celebration feels more special when we're together...`,
-      positon: "right-20",
+      positon: "right-80",
     },
     {
       title: "Roka-fied",
       date: "July 29, 2025",
       image: "/roka-fied.jpg",
       content: `Every celebration feels more special when we're together...`,
-      positon: "left-40",
+      positon: "left-50",
     },
     {
       title: "She said yes again!",
       date: "July 30, 2025",
       image: "/she-says-yes-again.jpg",
       content: `Every celebration feels more special when we're together...`,
-      positon: "right-14",
+      positon: "right-60",
     },
     {
       title: "Trip to Liverpool",
@@ -223,77 +224,24 @@ export default function OurStoryPage() {
 
             {/* Single story card for desktop */}
 
-            <section className="relative lg:h-[7200px] w-full">
+            <section className="h-[9200px] w-full flex flex-col">
               {stories.map((story, index) => (
-                <>
-                  <div
-                    key={`content-${currentStory}`}
-                    className="lg:flex lg:flex-1 flex-col items-start text-white hidden px-32 pt-4 lg:pt-8 max-w-2xl text-center lg:text-left"
-                  >
-                    <h2 className="text-lg sm:text-xl font-medium mb-4 sm:mb-6 text-white">
-                      {stories[currentStory].date}
-                    </h2>
-                    <div className="text-sm sm:text-base leading-relaxed font-light space-y-3 sm:space-y-4">
-                      {stories[currentStory].content
-                        .split("\n\n")
-                        .map((paragraph, index) => (
-                          <p key={index}>{paragraph}</p>
-                        ))}
-                    </div>
-                  </div>
-                  <div
-                    key={story.image + story.title}
-                    style={{
-                      top: `${index * 600}px`,
-                    }}
-                    className={`absolute ${story.positon}  hidden lg:block bg-white p-4 sm:p-6 shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full max-w-sm lg:w-80 flex-shrink-0`}
-                  >
-                    <div
-                      className="mb-4 sm:mb-6 relative cursor-pointer"
-                      onClick={() => setIsModalOpen(true)}
-                    >
-                      <AnimatePresence mode="wait">
-                        <motion.div
-                          key={story.image}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.5 }}
-                        >
-                          <Image
-                            src={story.image || "/placeholder.svg"}
-                            alt={story.title}
-                            width={400}
-                            height={400}
-                            className="w-full h-48 sm:h-64 lg:h-72 object-cover"
-                          />
-                        </motion.div>
-                      </AnimatePresence>
-                    </div>
-                    <h3 className="story-title-desktop font-cursive text-center">
-                      {story.title}
-                    </h3>
-                  </div>
-                </>
+                <div
+                  key={story.image}
+                  style={{ top: `${index * 800}px` }}
+                  className={`absolute ${story.positon}`}
+                >
+                  <StoryCard
+                    index={index}
+                    image={story.image}
+                    title={story.title}
+                    date={story.date}
+                    content={story.content}
+                    setIsModalOpen={setIsModalOpen}
+                  />
+                </div>
               ))}
             </section>
-
-            {/* Story text (desktop only) */}
-            {/* <div
-              key={`content-${currentStory}`}
-              className="lg:flex lg:flex-1 flex-col items-start text-white hidden px-32 pt-4 lg:pt-8 max-w-2xl text-center lg:text-left"
-            >
-              <h2 className="text-lg sm:text-xl font-medium mb-4 sm:mb-6 text-white">
-                {stories[currentStory].date}
-              </h2>
-              <div className="text-sm sm:text-base leading-relaxed font-light space-y-3 sm:space-y-4">
-                {stories[currentStory].content
-                  .split("\n\n")
-                  .map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-              </div>
-            </div> */}
           </div>
         </div>
 
