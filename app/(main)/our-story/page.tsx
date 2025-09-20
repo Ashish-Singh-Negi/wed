@@ -222,9 +222,7 @@ export default function OurStoryPage() {
               ))}
             </div>
 
-            {/* Single story card for desktop */}
-
-            <section className="h-[9200px] w-full flex flex-col">
+            <section className="lg:h-[9200px] w-full flex flex-col">
               {stories.map((story, index) => (
                 <div
                   key={story.image}
