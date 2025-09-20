@@ -13,24 +13,24 @@
 
 @font-face {
   font-family: "Alice";
-  src: url("/ALICE-REGULAR.ttf") format("truetype");
+  src: url("../public/ALICE-REGULAR.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Calibri";
-  src: url("/CALIBRI.ttf") format("truetype");
+  src: url("../public/CALIBRI.TTF") format("truetype");
 }
 
 @font-face {
   font-family: "English111";
-  src: url("/E111VIVA.ttf") format("truetype");
+  src: url("../public/E111VIVA.TTF") format("truetype");
 }
 
 @font-face {
   font-family: "Trajanpro";
-  src: url("/TRAJANPRO-REGULAR.ttf") format("truetype");
+  src: url("../public/TRAJANPRO-REGULAR.OTF") format("truetype");
 }
 
 .font-alice {
