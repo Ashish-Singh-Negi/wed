@@ -1,10 +1,11 @@
 "use client";
 
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { AnimatePresence, delay, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import Image from "next/image";
+import { FaHeart } from "react-icons/fa6";
 
 const itemVariants = {
   hidden: (side: string) => ({
@@ -15,6 +16,17 @@ const itemVariants = {
     opacity: 1,
     x: 0,
     transition: { duration: 0.6 },
+  },
+};
+
+const heartVarients = {
+  hidden: {
+    scale: 0,
+    opacity: 0,
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
   },
 };
 
@@ -95,10 +107,25 @@ function AnimatedEntry({
       {side === "left" ? (
         <div className="h-full w-full flex items-center ">
           <div className="h-fit w-1/2 flex flex-col items-end justify-center gap-2 bg-gradient-to-r from-transparent to-white py-4">
-            <h2 className="px-4 title sm:font-english">{date}</h2>
+            <h2 className="px-4 font-english text-2xl font-semibold">{date}</h2>
             <p className="pr-4 lg:pl-32 font-alice">{content}</p>
           </div>
-          <div className="h-full w-1 bg-white"></div>
+          <div className="relative h-full w-1 bg-white flex items-center">
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={heartVarients}
+              transition={{
+                delay: 0.6,
+                duration: 0.6,
+                ease: [0.25, 0.8, 0.25, 1],
+              }}
+              className="absolute -right-2 size-5 text-orange-700"
+            >
+              <FaHeart className="size-5" />
+            </motion.div>
+          </div>
           <motion.div
             ref={ref}
             custom={side}
@@ -119,10 +146,10 @@ function AnimatedEntry({
               >
                 <AnimatePresence mode="wait">
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
+                    initial={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+                    transition={{ duration: 0.6, ease: [0.25, 0.8, 0.25, 1] }}
                   >
                     <Image
                       src={image || "/placeholder.svg"}
@@ -160,10 +187,10 @@ function AnimatedEntry({
               >
                 <AnimatePresence mode="wait">
                   <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
+                    initial={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                    exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+                    transition={{ duration: 0.6, ease: [0.25, 0.8, 0.25, 1] }}
                   >
                     <Image
                       src={image || "/placeholder.svg"}
@@ -177,9 +204,24 @@ function AnimatedEntry({
               </div>
             </div>
           </motion.div>
-          <div className="h-full w-1 bg-white"></div>
+          <div className="relative h-full w-1 bg-white flex items-center">
+            <motion.div
+              ref={ref}
+              initial="hidden"
+              animate={controls}
+              variants={heartVarients}
+              transition={{
+                delay: 0.6,
+                duration: 0.6,
+                ease: [0.25, 0.8, 0.25, 1],
+              }}
+              className="absolute -right-2 size-5 text-orange-700"
+            >
+              <FaHeart className="size-5" />
+            </motion.div>
+          </div>
           <div className="h-fit w-1/2 flex flex-col gap-2 justify-center bg-gradient-to-r from-white py-4">
-            <h2 className="px-4 title sm:font-english">{date}</h2>
+            <h2 className="px-4 font-english text-2xl font-semibold">{date}</h2>
             <p className="px-4 lg:pr-32 font-alice">{content}</p>
           </div>
         </div>
