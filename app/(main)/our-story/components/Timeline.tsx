@@ -91,8 +91,8 @@ function AnimatedEntry({
       {side === "left" ? (
         <div className="h-full w-full flex items-center ">
           <div className="h-fit w-1/2 flex flex-col items-end justify-center gap-2 bg-gradient-to-r from-transparent to-white py-4">
-            <h2 className=" px-4">{date}</h2>
-            <p className="px-4 pl-32">{content}</p>
+            <h2 className=" px-4 title">{date}</h2>
+            <p className="px-4 pl-32 font-alice">{content}</p>
           </div>
           <div className="h-full w-1 bg-white"></div>
           <motion.div
@@ -104,7 +104,7 @@ function AnimatedEntry({
             className="bg-gradient-to-r from-white to-transparent px-2 w-1/2"
           >
             <div
-              className={` hidden lg:block bg-white p-4 sm:p-6 shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full max-w-sm lg:w-80 flex-shrink-0`}
+              className={` hidden lg:block bg-white p-4 sm:p-6 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300 w-full max-w-sm lg:w-80 flex-shrink-0`}
             >
               <div
                 className="mb-4 sm:mb-6 relative cursor-pointer"
