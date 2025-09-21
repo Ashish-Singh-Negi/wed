@@ -1,14 +1,15 @@
 "use client";
+
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Dispatch, SetStateAction, useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import Image from "next/image";
 
 const itemVariants = {
   hidden: (side: string) => ({
     opacity: 0,
-    x: side === "left" ? -400 : 400,
+    x: side === "left" ? -100 : 100,
   }),
   visible: {
     opacity: 1,
@@ -33,7 +34,7 @@ export default function Timeline({
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
-    <div className=" h-full w-full p-6 rounded-xl shadow-lg font-mono">
+    <div className="h-full w-full p-6 rounded-xl shadow-lg font-mono">
       <h1 className="title flex justify-center">
         <p className="bg-gradient-to-b from-transparent to-white px-10 rounded-b-3xl">
           Our Love Story
@@ -78,7 +79,7 @@ function AnimatedEntry({
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.5 });
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.15 });
 
   useEffect(() => {
     if (inView) {
@@ -89,10 +90,10 @@ function AnimatedEntry({
   }, [inView, controls]);
 
   return (
-    <div className={`h-[420px] w-full flex`}>
+    <div className={`lg:h-[420px] md:h-[420px] h-[560px] w-full flex`}>
       {side === "left" ? (
         <div className="h-full w-full flex items-center ">
-          <div className="h-fit w-1/2 sm:w-full flex flex-col items-end justify-center gap-2 bg-gradient-to-r from-transparent to-white py-4">
+          <div className="h-fit w-1/2 flex flex-col items-end justify-center gap-2 bg-gradient-to-r from-transparent to-white py-4">
             <h2 className="px-4 title sm:font-english">{date}</h2>
             <p className="pr-4 lg:pl-32 font-alice">{content}</p>
           </div>
@@ -106,7 +107,7 @@ function AnimatedEntry({
             className="bg-gradient-to-r from-white to-transparent px-2 w-1/2"
           >
             <div
-              className={`bg-white p-4 sm:p-6 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300 w-full max-w-sm lg:w-80 flex-shrink-0`}
+              className={`bg-white p-4 sm:p-6 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300 max-w-sm lg:w-80 flex-shrink-0`}
             >
               <div
                 className="mb-4 sm:mb-6 relative cursor-pointer"
@@ -178,7 +179,7 @@ function AnimatedEntry({
           <div className="h-full w-1 bg-white"></div>
           <div className="h-fit w-1/2 flex flex-col gap-2 justify-center bg-gradient-to-r from-white py-4">
             <h2 className="px-4 title sm:font-english">{date}</h2>
-            <p className="px-4 lg:pr-32 font-alice text-sm">{content}</p>
+            <p className="px-4 lg:pr-32 font-alice">{content}</p>
           </div>
         </div>
       )}
