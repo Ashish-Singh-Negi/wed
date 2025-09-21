@@ -36,9 +36,7 @@ export default function Timeline({
   return (
     <div className="h-full w-full py-6 rounded-xl shadow-lg font-mono">
       <h1 className="title flex justify-center">
-        <p className="bg-gradient-to-b from-transparent to-white px-10 rounded-b-3xl">
-          Our Love Story
-        </p>
+        <p className="bg-white px-10 rounded-b-3xl">Our Love Story</p>
       </h1>
       <div>
         {stories.map(({ title, image, date, content, positon }, index) => (
@@ -55,6 +53,9 @@ export default function Timeline({
           />
         ))}
       </div>
+      <footer className="title flex justify-center">
+        <p className="bg-white px-10 rounded-t-3xl">Our Love Story</p>
+      </footer>
     </div>
   );
 }
@@ -90,7 +91,7 @@ function AnimatedEntry({
   }, [inView, controls]);
 
   return (
-    <div className={`lg:h-[420px] md:h-[420px] h-[520px] w-full flex`}>
+    <div className={`h-[420px] w-full flex`}>
       {side === "left" ? (
         <div className="h-full w-full flex items-center ">
           <div className="h-fit w-1/2 flex flex-col items-end justify-center gap-2 bg-gradient-to-r from-transparent to-white py-4">
