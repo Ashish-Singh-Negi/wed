@@ -33,7 +33,7 @@ export default function Timeline({
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
-    <div className="h-full w-full p-6 rounded-xl shadow-lg font-mono">
+    <div className="hidden lg:h-full w-full p-6 rounded-xl shadow-lg font-mono">
       {/* <h1 className="text-5xl font-bold text-center mb-8 bg-gradient-to-b from-transparent to-red-400 font-[Tangerine]">
         Timeline
       </h1> */}
