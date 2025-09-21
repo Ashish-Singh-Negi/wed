@@ -47,7 +47,7 @@ export default function WelcomePage() {
     "
               >
                 <div className="flex flex-col font-alice justify-center gap-6">
-                  <h1 className="title text-mobile-title lg:text-desktop-title leading-tight text-[#c4a882]">
+                  <h1 className="font-english text-3xl text-mobile-title lg:text-desktop-title leading-tight text-[#c4a882]">
                     Welcome
                   </h1>
 
@@ -76,7 +76,7 @@ export default function WelcomePage() {
                   <div className="flex justify-center items-center gap-2 sm:gap-3 text-black">
                     <p className="text-sm sm:text-lg font-alice">
                       With love, <br />{" "}
-                      <span className="font-english text-2xl text-[#c4a882]">
+                      <span className="font-english text-3xl text-[#c4a882]">
                         Ria &amp; Vivek
                       </span>
                     </p>
