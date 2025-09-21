@@ -1,0 +1,175 @@
+"use client";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Dispatch, SetStateAction, useEffect } from "react";
+
+import Image from "next/image";
+
+const itemVariants = {
+  hidden: (side: string) => ({
+    opacity: 0,
+    x: side === "left" ? -400 : 400,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6 },
+  },
+};
+
+export default function Timeline({
+  stories,
+  setIsModalOpen,
+}: {
+  stories: {
+    title: string;
+    image: string;
+    date: string;
+    content: string;
+    positon: string;
+  }[];
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+}) {
+  return (
+    <div className="h-full w-full bg-gray-800 text-white p-6 rounded-xl shadow-lg font-mono">
+      {/* <h1 className="text-5xl font-bold text-center mb-8 bg-gradient-to-b from-transparent to-red-400 font-[Tangerine]">
+        Timeline
+      </h1> */}
+      <div>
+        {stories.map(({ title, image, date, content, positon }) => (
+          <AnimatedEntry
+            key={image}
+            side={positon}
+            image={image}
+            date={date}
+            title={title}
+            content={content}
+            setIsModalOpen={setIsModalOpen}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function AnimatedEntry({
+  side,
+  title,
+  image,
+  date,
+  content,
+  setIsModalOpen,
+}: {
+  side: string;
+  title: string;
+  image: string;
+  date: string;
+  content: string;
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+}) {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.5 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [inView, controls]);
+
+  return (
+    <div className={`h-96 w-full flex`}>
+      {side === "left" ? (
+        <div className="h-full w-full flex items-center">
+          <div className="h-full w-1/2 flex flex-col items-end justify-center gap-2">
+            <h2 className="bg-gradient-to-r from-transparent to-red-500 px-4">
+              {date}
+            </h2>
+            <p className="px-4">{content}</p>
+          </div>
+          <div className="h-full w-1 bg-red-500"></div>
+          <motion.div
+            ref={ref}
+            custom={side}
+            initial="hidden"
+            animate={controls}
+            variants={itemVariants}
+            className="bg-gradient-to-r from-red-500 to-transparent px-2 w-1/2"
+          >
+            <div
+              className={` hidden lg:block bg-white p-4 sm:p-6 shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full max-w-sm lg:w-80 flex-shrink-0`}
+            >
+              <div
+                className="mb-4 sm:mb-6 relative cursor-pointer"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Image
+                      src={image || "/placeholder.svg"}
+                      alt={title}
+                      width={400}
+                      height={400}
+                      className="w-full h-48 sm:h-64 lg:h-72 object-cover"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      ) : (
+        <div className="h-96 w-full flex items-center justify-end ">
+          <motion.div
+            ref={ref}
+            custom={side}
+            initial="hidden"
+            animate={controls}
+            variants={itemVariants}
+            className=" bg-gradient-to-r from-transparent to-red-500 px-2 w-1/2 flex justify-end"
+          >
+            {" "}
+            <div
+              className={` hidden lg:block bg-white p-4 sm:p-6 shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full max-w-sm lg:w-80 flex-shrink-0`}
+            >
+              <div
+                className="mb-4 sm:mb-6 relative cursor-pointer"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Image
+                      src={image || "/placeholder.svg"}
+                      alt={title}
+                      width={400}
+                      height={400}
+                      className="w-full h-48 sm:h-64 lg:h-72 object-cover"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+          </motion.div>
+          <div className="h-full w-1 bg-red-500"></div>
+          <div className="h-full w-1/2 flex flex-col gap-2 justify-center">
+            <h2 className="bg-gradient-to-r from-red-500 to-transparent px-4">
+              {date}
+            </h2>
+            <p className="px-4">{content}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

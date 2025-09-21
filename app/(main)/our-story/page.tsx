@@ -4,10 +4,9 @@ import "./our-story.css";
 import type React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import SideNavigation from "../../components/SideNavigation";
 import Navigation from "../../components/Navigation";
 import Image from "next/image";
-import StoryCard from "./components/StoryCard";
+import Timeline from "./components/Timeline";
 
 export default function OurStoryPage() {
   const [currentStory, setCurrentStory] = useState(0);
@@ -40,94 +39,94 @@ export default function OurStoryPage() {
       date: "June 23, 2024",
       image: "/ascot.jpg",
       content: `This is us, celebrating a perfect day at Ascot. We were both so happy, dressed up and ready to enjoy the day, and this photo captures our joy.`,
-      positon: "right-96",
+      positon: "left",
     },
     {
       title: "Ria meets Vivek's Family",
       date: "December 15, 2024",
       image: "/ria-meets-vivek-family.jpg",
       content: `Here is a special moment we'll never forget: the day Ria met my family. On December 15, 2024, we all got together, and it felt so natural, like the beginning of something truly wonderful.`,
-      positon: "left-50",
+      positon: "right",
     },
     {
       title: "Vivek meets Ria's Family",
       date: "December 23, 2024",
       image: "/vivek-meets-ria-family.jpg",
       content: `New beginnings and growing families! We absolutely loved this moment on December 23, 2024, when Vivek officially met Ria's family. Surrounded by holiday cheer and a beautiful Christmas tree, it was the perfect start to our combined family journey.`,
-      positon: "right-40",
+      positon: "left",
     },
     {
       title: "Isle of Wight Excursion",
       date: "June 22, 2025",
       image: "/isle-of-wight-excursion.jpg",
       content: `One of our favorite memories! This was us, so happy and ready for fun on our Isle of Wight trip on June 22, 2025. We loved every moment of sailing, exploring, and just being together, soaking in the beautiful views and making memories that last a lifetime.`,
-      positon: "left-80",
+      positon: "right",
     },
     {
       title: "Ria passes!",
       date: "July 18, 2025",
       image: "/ria-passes.jpg",
       content: `A day to be proud of! This photo captures the moment on July 18, 2025, when we celebrated Ria's incredible achievement. It was a day of hard work paying off, marking a big milestone in our lives and a beautiful step forward in our journey together. What a special day to celebrate!`,
-      positon: "right-60",
+      positon: "left",
     },
     {
       title: "Races in Singapore",
       date: "July 27, 2025",
       image: "/races-in-singapore.jpg",
       content: `Who said races are just for race cars? We took a trip to Singapore on July 27, 2025, and had an absolute blast on the Skyline Luge! This photo captures our competitive, fun-loving spirit. It was the perfect adventure and a reminder that our life together is a thrilling ride.`,
-      positon: "left-50",
+      positon: "right",
     },
     {
       title: "Universal Roller Coaster",
       date: "July 27, 2025",
       image: "/universal-rollercoaster.jpg",
       content: `Ready for a wild ride! This photo perfectly sums up our journey together—full of excitement and adventure. Here we are, all smiles in front of the iconic Universal Studios globe in Singapore on July 27, 2025. It's just a taste of the thrilling life we're building, and we can't wait for you to be a part of it.`,
-      positon: "right-50",
+      positon: "left",
     },
     {
       title: "She said yes!",
       date: "July 28, 2025",
       image: "/she-says-yes.jpg",
       content: `On July 28, 2025, our biggest adventure began. With the sooting sun as our witness and the water gently swaying beneath us, Vivek got down on one knee and asked Ria to marry him. This moment, captured in front of a heart-shaped arch and a 'Marry Me' sign, is the start of our journey toward happily ever after. We cannot wait to celebrate with you!`,
-      positon: "left-60",
+      positon: "right",
     },
     {
       title: "Celebrating engaged life",
       date: "July 28, 2025",
       image: "/celebrating-engaged-life.jpg",
       content: `Every celebration feels more special when we're together...`,
-      positon: "right-80",
+      positon: "left",
     },
     {
       title: "Roka-fied",
       date: "July 29, 2025",
       image: "/roka-fied.jpg",
       content: `Every celebration feels more special when we're together...`,
-      positon: "left-50",
+      positon: "right",
     },
     {
       title: "She said yes again!",
       date: "July 30, 2025",
       image: "/she-says-yes-again.jpg",
       content: `Every celebration feels more special when we're together...`,
-      positon: "right-60",
+      positon: "left",
     },
     {
       title: "Trip to Liverpool",
       date: "September 09, 2025",
       image: "/trip-to-liverpool.jpg",
       content: `Every celebration feels more special when we're together...`,
-      positon: "left-96",
+      positon: "right",
     },
   ];
 
-  const handlePreviousStory = () => {
-    setCurrentStory((prev) => (prev - 1 + stories.length) % stories.length);
-  };
+  // const handlePreviousStory = () => {
+  //   setCurrentStory((prev) => (prev - 1 + stories.length) % stories.length);
+  // };
 
-  const handleNextStory = () => {
-    setCurrentStory((prev) => (prev + 1) % stories.length);
-  };
+  // const handleNextStory = () => {
+  //   setCurrentStory((prev) => (prev + 1) % stories.length);
+  // };
 
   const handlePreviousImage = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -222,7 +221,9 @@ export default function OurStoryPage() {
               ))}
             </div>
 
-            <section className="relative lg:h-[9400px] w-full flex flex-col">
+            <Timeline stories={stories} setIsModalOpen={setIsModalOpen} />
+
+            {/* <section className="relative lg:h-[9400px] w-full flex flex-col">
               {stories.map((story, index) => (
                 <div
                   key={story.image}
@@ -239,7 +240,7 @@ export default function OurStoryPage() {
                   />
                 </div>
               ))}
-            </section>
+            </section> */}
           </div>
         </div>
 
