@@ -34,7 +34,7 @@ export default function Timeline({
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
-    <div className="h-full w-full p-6 rounded-xl shadow-lg font-mono">
+    <div className="h-full w-full py-6 rounded-xl shadow-lg font-mono">
       <h1 className="title flex justify-center">
         <p className="bg-gradient-to-b from-transparent to-white px-10 rounded-b-3xl">
           Our Love Story
@@ -90,7 +90,7 @@ function AnimatedEntry({
   }, [inView, controls]);
 
   return (
-    <div className={`lg:h-[420px] md:h-[420px] h-[560px] w-full flex`}>
+    <div className={`lg:h-[420px] md:h-[420px] h-[520px] w-full flex`}>
       {side === "left" ? (
         <div className="h-full w-full flex items-center ">
           <div className="h-fit w-1/2 flex flex-col items-end justify-center gap-2 bg-gradient-to-r from-transparent to-white py-4">
