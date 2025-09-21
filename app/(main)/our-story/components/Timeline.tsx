@@ -31,7 +31,7 @@ export default function Timeline({
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
-    <div className="h-full w-full bg-gray-800 text-white p-6 rounded-xl shadow-lg font-mono">
+    <div className="h-full w-full p-6 rounded-xl shadow-lg font-mono">
       {/* <h1 className="text-5xl font-bold text-center mb-8 bg-gradient-to-b from-transparent to-red-400 font-[Tangerine]">
         Timeline
       </h1> */}
@@ -79,23 +79,21 @@ function AnimatedEntry({
   }, [inView, controls]);
 
   return (
-    <div className={`h-96 w-full flex`}>
+    <div className={`h-[420px] w-full flex`}>
       {side === "left" ? (
-        <div className="h-full w-full flex items-center">
-          <div className="h-full w-1/2 flex flex-col items-end justify-center gap-2">
-            <h2 className="bg-gradient-to-r from-transparent to-red-500 px-4">
-              {date}
-            </h2>
-            <p className="px-4">{content}</p>
+        <div className="h-full w-full flex items-center ">
+          <div className="h-fit w-1/2 flex flex-col items-end justify-center gap-2 bg-gradient-to-r from-transparent to-white py-4">
+            <h2 className=" px-4">{date}</h2>
+            <p className="px-4 pl-32">{content}</p>
           </div>
-          <div className="h-full w-1 bg-red-500"></div>
+          <div className="h-full w-1 bg-white"></div>
           <motion.div
             ref={ref}
             custom={side}
             initial="hidden"
             animate={controls}
             variants={itemVariants}
-            className="bg-gradient-to-r from-red-500 to-transparent px-2 w-1/2"
+            className="bg-gradient-to-r from-white to-transparent px-2 w-1/2"
           >
             <div
               className={` hidden lg:block bg-white p-4 sm:p-6 shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full max-w-sm lg:w-80 flex-shrink-0`}
@@ -125,14 +123,14 @@ function AnimatedEntry({
           </motion.div>
         </div>
       ) : (
-        <div className="h-96 w-full flex items-center justify-end ">
+        <div className="h-full w-full flex items-center justify-end ">
           <motion.div
             ref={ref}
             custom={side}
             initial="hidden"
             animate={controls}
             variants={itemVariants}
-            className=" bg-gradient-to-r from-transparent to-red-500 px-2 w-1/2 flex justify-end"
+            className=" bg-gradient-to-r from-transparent to-white px-2 w-1/2 flex justify-end"
           >
             {" "}
             <div
@@ -161,12 +159,10 @@ function AnimatedEntry({
               </div>
             </div>
           </motion.div>
-          <div className="h-full w-1 bg-red-500"></div>
-          <div className="h-full w-1/2 flex flex-col gap-2 justify-center">
-            <h2 className="bg-gradient-to-r from-red-500 to-transparent px-4">
-              {date}
-            </h2>
-            <p className="px-4">{content}</p>
+          <div className="h-full w-1 bg-white"></div>
+          <div className="h-fit w-1/2 flex flex-col gap-2 justify-center bg-gradient-to-r from-white py-4">
+            <h2 className="px-4">{date}</h2>
+            <p className="px-4 pr-32">{content}</p>
           </div>
         </div>
       )}
