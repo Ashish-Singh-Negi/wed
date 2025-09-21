@@ -149,7 +149,7 @@ function AnimatedEntry({
                     initial={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
                     animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                     exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
-                    transition={{ duration: 0.6, ease: [0.25, 0.8, 0.25, 1] }}
+                    transition={{ duration: 0.4, ease: [0.25, 0.8, 0.25, 1] }}
                   >
                     <Image
                       src={image || "/placeholder.svg"}
@@ -190,7 +190,7 @@ function AnimatedEntry({
                     initial={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
                     animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                     exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
-                    transition={{ duration: 0.6, ease: [0.25, 0.8, 0.25, 1] }}
+                    transition={{ duration: 0.4, ease: [0.25, 0.8, 0.25, 1] }}
                   >
                     <Image
                       src={image || "/placeholder.svg"}
