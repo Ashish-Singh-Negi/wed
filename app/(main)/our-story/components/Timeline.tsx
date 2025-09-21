@@ -121,7 +121,7 @@ function AnimatedEntry({
                 duration: 0.6,
                 ease: [0.25, 0.8, 0.25, 1],
               }}
-              className="absolute -right-2 size-5 text-orange-700"
+              className="absolute -right-2 size-5 text-[#b26e59]"
             >
               <FaHeart className="size-5" />
             </motion.div>
@@ -215,7 +215,7 @@ function AnimatedEntry({
                 duration: 0.6,
                 ease: [0.25, 0.8, 0.25, 1],
               }}
-              className="absolute -right-2 size-5 text-orange-700"
+              className="absolute -right-2 size-5 text-[#b26e59]"
             >
               <FaHeart className="size-5" />
             </motion.div>
