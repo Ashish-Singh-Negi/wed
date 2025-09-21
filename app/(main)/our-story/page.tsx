@@ -221,7 +221,11 @@ export default function OurStoryPage() {
               ))}
             </div>
 
-            <Timeline stories={stories} setIsModalOpen={setIsModalOpen} />
+            <Timeline
+              stories={stories}
+              setCurrentStory={setCurrentStory}
+              setIsModalOpen={setIsModalOpen}
+            />
 
             {/* <section className="relative lg:h-[9400px] w-full flex flex-col">
               {stories.map((story, index) => (

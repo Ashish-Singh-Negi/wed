@@ -19,6 +19,7 @@ const itemVariants = {
 
 export default function Timeline({
   stories,
+  setCurrentStory,
   setIsModalOpen,
 }: {
   stories: {
@@ -28,6 +29,7 @@ export default function Timeline({
     content: string;
     positon: string;
   }[];
+  setCurrentStory: Dispatch<SetStateAction<number>>;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   return (
@@ -36,7 +38,7 @@ export default function Timeline({
         Timeline
       </h1> */}
       <div>
-        {stories.map(({ title, image, date, content, positon }) => (
+        {stories.map(({ title, image, date, content, positon }, index) => (
           <AnimatedEntry
             key={image}
             side={positon}
@@ -44,6 +46,8 @@ export default function Timeline({
             date={date}
             title={title}
             content={content}
+            setCurrentStory={setCurrentStory}
+            index={index}
             setIsModalOpen={setIsModalOpen}
           />
         ))}
@@ -58,6 +62,8 @@ function AnimatedEntry({
   image,
   date,
   content,
+  index,
+  setCurrentStory,
   setIsModalOpen,
 }: {
   side: string;
@@ -65,6 +71,8 @@ function AnimatedEntry({
   image: string;
   date: string;
   content: string;
+  index: number;
+  setCurrentStory: Dispatch<SetStateAction<number>>;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }) {
   const controls = useAnimation();
@@ -100,7 +108,10 @@ function AnimatedEntry({
             >
               <div
                 className="mb-4 sm:mb-6 relative cursor-pointer"
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  setCurrentStory(index);
+                }}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -138,7 +149,10 @@ function AnimatedEntry({
             >
               <div
                 className="mb-4 sm:mb-6 relative cursor-pointer"
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  setCurrentStory(index);
+                }}
               >
                 <AnimatePresence mode="wait">
                   <motion.div
