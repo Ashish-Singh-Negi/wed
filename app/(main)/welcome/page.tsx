@@ -76,7 +76,7 @@ export default function WelcomePage() {
                   <div className="flex justify-center items-center gap-2 sm:gap-3 text-black">
                     <p className="text-sm sm:text-lg font-alice">
                       With love, <br />{" "}
-                      <span className="font-english text-2xl">
+                      <span className="font-english text-2xl text-[#c4a882]">
                         Ria &amp; Vivek
                       </span>
                     </p>
