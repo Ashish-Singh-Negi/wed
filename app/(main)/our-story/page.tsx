@@ -139,7 +139,7 @@ export default function OurStoryPage() {
   };
 
   return (
-    <div className="min-h-screen lg:bg-[#bba582]/80 relative overflow-hidden">
+    <div className="min-h-screen bg-[#bba582]/80 relative overflow-hidden">
       <Navigation />
       <div className="pt-[12%]">
         {/* <div className="hidden lg:block">
@@ -183,43 +183,8 @@ export default function OurStoryPage() {
 
         {/* Story display */}
         <div className="pt-10 flex items-center px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-left justify-center w-full">
+          <div className="flex flex-col  items-left justify-center w-full">
             {/* Grid for mobile + tablet */}
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
-              {stories.map((story, index) => (
-                <div
-                  key={index}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => {
-                    setCurrentStory(index);
-                    setIsModalOpen(true);
-                  }}
-                  onKeyDown={(e: React.KeyboardEvent) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      setCurrentStory(index);
-                      setIsModalOpen(true);
-                    }
-                  }}
-                  className="bg-white relative p-2 sm:p-2 shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full flex-shrink-0 cursor-pointer z-30"
-                >
-                  <div className="mb-4 sm:mb-6 relative w-full h-48 sm:h-64 md:h-72">
-                    {/* put the click handler on the card wrapper (above) and make the image ignore pointer events so the wrapper always receives clicks */}
-                    <Image
-                      src={story.image || "/placeholder.svg"}
-                      alt={story.title}
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover pointer-events-none"
-                    />
-                  </div>
-
-                  <h3 className="story-title-mobile font-cursive italic text-center">
-                    {story.title}
-                  </h3>
-                </div>
-              ))}
-            </div>
 
             <Timeline
               stories={stories}
@@ -341,3 +306,39 @@ export default function OurStoryPage() {
     </div>
   );
 }
+
+// <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
+//               {stories.map((story, index) => (
+//                 <div
+//                   key={index}
+//                   role="button"
+//                   tabIndex={0}
+//                   onClick={() => {
+//                     setCurrentStory(index);
+//                     setIsModalOpen(true);
+//                   }}
+//                   onKeyDown={(e: React.KeyboardEvent) => {
+//                     if (e.key === "Enter" || e.key === " ") {
+//                       setCurrentStory(index);
+//                       setIsModalOpen(true);
+//                     }
+//                   }}
+//                   className="bg-white relative p-2 sm:p-2 shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-300 w-full flex-shrink-0 cursor-pointer z-30"
+//                 >
+//                   <div className="mb-4 sm:mb-6 relative w-full h-48 sm:h-64 md:h-72">
+//                     {/* put the click handler on the card wrapper (above) and make the image ignore pointer events so the wrapper always receives clicks */}
+//                     <Image
+//                       src={story.image || "/placeholder.svg"}
+//                       alt={story.title}
+//                       width={400}
+//                       height={400}
+//                       className="w-full h-full object-cover pointer-events-none"
+//                     />
+//                   </div>
+
+//                   <h3 className="story-title-mobile font-cursive italic text-center">
+//                     {story.title}
+//                   </h3>
+//                 </div>
+//               ))}
+//             </div>
