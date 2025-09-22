@@ -10,6 +10,10 @@ const navigationItems = [
   { name: "COVER", href: "/" },
   { name: "WELCOME", href: "/welcome" },
   { name: "OUR STORY", href: "/our-story" },
+  { name: "Events", href: "/events" },
+  { name: "RSVP", href: "/rsvp" },
+  { name: "RSVP2", href: "/rsvp2" },
+  { name: "FAQs", href: "/faqs" },
 ];
 
 export default function Navigation() {
