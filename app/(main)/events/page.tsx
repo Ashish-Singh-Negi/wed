@@ -95,7 +95,6 @@ const EventsPage = () => {
               <p className="font-alice text-2xl text-center">
                 RECEPTION & AFTER PARTY
               </p>
-              <Image height={140} width={140} src={party} alt="party" />
             </div>
           </section>
         </div>
