@@ -92,10 +92,10 @@ const EventsPage = () => {
                   BARAAT CEREMONY
                 </p>
                 <p className="font-alice">
-                  s a vibrant and celebratory procession led by the groom and
-                  his family, dancing and singing with music to the wedding
-                  venue. This pre-wedding ritual symbolizes the groom&apos;s
-                  joyful journey to marry the bride
+                  a vibrant and celebratory procession led by the groom and his
+                  family, dancing and singing with music to the wedding venue.
+                  This pre-wedding ritual symbolizes the groom&apos;s joyful
+                  journey to marry the bride
                 </p>
               </div>
               <Image height={140} width={140} src={baraat} alt="baraat" />
