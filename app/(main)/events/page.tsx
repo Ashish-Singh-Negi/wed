@@ -10,6 +10,7 @@ import jaimala from "../../../public/jaimala.png";
 import pheras from "../../../public/pheras.png";
 import reception from "../../../public/reception.png";
 import party from "../../../public/after party.png";
+// import white from "../../../public/white-bg.jpeg";
 
 // Day 1
 // 5th March
@@ -28,26 +29,13 @@ import party from "../../../public/after party.png";
 
 const EventsPage = () => {
   return (
-    <div className="min-h-screen bg-[#bba582]/80 relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
       <Navigation />
       <div className="pt-[12%] flex justify-center">
         <div className="w-[840px] pt-10 flex flex-col  px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center text-5xl">
+          {/* <div className="flex justify-center text-5xl">
             <h1 className="font-english text-white">Ria &amp; Vivek</h1>
-          </div>
-
-          {/* <Image
-            src={divider}
-            alt="Divider"
-            className="h-2 w-full object-cover"
-          />
-          
-          <Image
-            src={divider}
-            alt="Divider"
-            className="h-2 w-full object-cover"
-          /> */}
-
+          </div> */}
           <section className="my-4">
             <h2 className="text-center font-english text-5xl rounded-b-2xl py-2">
               5 <sup>th</sup> March
@@ -55,7 +43,7 @@ const EventsPage = () => {
 
             <div className="h-44 w-full  flex items-center justify-evenly">
               <Image height={140} width={140} src={mehendi} alt="mehendi" />
-              <p className="font-alice text-2xl text-center font-bold bg-gradient-to-r from-[#6e7f3e]  bg-clip-text text-transparent">
+              <p className="font-alice text-2xl text-center">
                 MEHENDI CEREMONY
               </p>
             </div>

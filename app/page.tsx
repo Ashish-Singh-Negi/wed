@@ -25,10 +25,11 @@ export default function WelcomePage() {
         {/* Mobile/Tablet */}
         <div className="block lg:hidden w-full h-full">
           <video
-            autoPlay
             playsInline
-            loop
+            autoPlay
             muted
+            loop
+            preload="auto"
             data-video="0"
             className="h-full w-full object-fill"
           >
