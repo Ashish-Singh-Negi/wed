@@ -26,6 +26,7 @@ export default function WelcomePage() {
         <div className="block lg:hidden w-full h-full">
           <video
             autoPlay
+            playsInline
             loop
             muted
             data-video="0"
