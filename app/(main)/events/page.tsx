@@ -1,7 +1,6 @@
 import Navigation from "@/app/components/Navigation";
 import Image from "next/image";
 
-import divider from "../../../public/divider.png";
 import haldi from "../../../public/haldi.png";
 import mehendi from "../../../public/mehandi.png";
 import sangeet from "../../../public/sangeet.png";
@@ -10,7 +9,7 @@ import jaimala from "../../../public/jaimala.png";
 import pheras from "../../../public/pheras.png";
 import reception from "../../../public/reception.png";
 import party from "../../../public/after party.png";
-// import white from "../../../public/white-bg.jpeg";
+import white from "../../../public/white-bg.jpeg";
 
 // Day 1
 // 5th March
@@ -29,8 +28,9 @@ import party from "../../../public/after party.png";
 
 const EventsPage = () => {
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <div className="min-h-screen bg-url('/white-bg.jpeg') relative overflow-hidden">
       <Navigation />
+      <Image src={white} fill alt="bg" className="absolute top-0 -z-10" />
       <div className="pt-[12%] flex justify-center">
         <div className="w-[840px] pt-10 flex flex-col  px-4 sm:px-6 lg:px-8">
           {/* <div className="flex justify-center text-5xl">
@@ -43,12 +43,12 @@ const EventsPage = () => {
 
             <div className="h-44 w-full  flex items-center justify-evenly">
               <Image height={140} width={140} src={mehendi} alt="mehendi" />
-              <p className="font-alice text-2xl text-center">
+              <p className="font-alice text-2xl text-center text-[#c4a882]">
                 MEHENDI CEREMONY
               </p>
             </div>
             <div className="h-44 w-full  flex items-center justify-evenly">
-              <p className="font-alice text-2xl text-center">
+              <p className="font-alice text-2xl text-center text-[#c4a882]">
                 SANGEET CEREMONY
               </p>
               <Image height={140} width={140} src={sangeet} alt="sangeet" />
@@ -62,25 +62,31 @@ const EventsPage = () => {
 
             <div className="h-40 w-full mt-4 flex items-center justify-evenly">
               <Image height={140} width={140} src={haldi} alt="haldi" />
-              <p className="font-alice text-2xl text-center">HALDI CEREMONY</p>
+              <p className="font-alice text-2xl text-center text-[#c4a882]">
+                HALDI CEREMONY
+              </p>
             </div>
             <div className="h-40 w-full mt-4 flex items-center justify-evenly">
-              <p className="font-alice text-2xl text-center">BARAAT CEREMONY</p>
+              <p className="font-alice text-2xl text-center text-[#c4a882]">
+                BARAAT CEREMONY
+              </p>
               <Image height={140} width={140} src={baraat} alt="baraat" />
             </div>
             <div className="h-40 w-full mt-4 flex items-center justify-evenly">
               <Image height={140} width={140} src={jaimala} alt="jaimala" />
-              <p className="font-alice text-2xl text-center">
+              <p className="font-alice text-2xl text-center text-[#c4a882]">
                 JAIMALA CEREMONY
               </p>
             </div>
             <div className="h-40 w-full mt-4 flex items-center justify-evenly">
-              <p className="font-alice text-2xl text-center">PHERAS CEREMONY</p>
+              <p className="font-alice text-2xl text-center text-[#c4a882]">
+                PHERAS CEREMONY
+              </p>
               <Image height={140} width={140} src={pheras} alt="pheras" />
             </div>
             <div className="h-40 w-full mt-4 flex items-center justify-evenly">
               <Image height={140} width={140} src={reception} alt="reception" />
-              <p className="font-alice text-2xl text-center">
+              <p className="font-alice text-2xl text-center text-[#c4a882]">
                 RECEPTION & AFTER PARTY
               </p>
             </div>
