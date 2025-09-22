@@ -8,7 +8,6 @@ import baraat from "../../../public/baarat.png";
 import jaimala from "../../../public/jaimala.png";
 import pheras from "../../../public/pheras.png";
 import reception from "../../../public/reception.png";
-import party from "../../../public/after party.png";
 import white from "../../../public/white-bg.jpeg";
 
 // Day 1
@@ -49,7 +48,7 @@ const EventsPage = () => {
                 </p>
                 <p className="font-alice">
                   is a joyful, pre-wedding event where intricate henna designs
-                  are applied to the bride's hands and feet, symbolizing
+                  are applied to the bride&apos;s hands and feet, symbolizing
                   blessings for prosperity and good fortune in her marriage
                 </p>
               </div>
@@ -95,8 +94,8 @@ const EventsPage = () => {
                 <p className="font-alice">
                   s a vibrant and celebratory procession led by the groom and
                   his family, dancing and singing with music to the wedding
-                  venue. This pre-wedding ritual symbolizes the groom's joyful
-                  journey to marry the bride
+                  venue. This pre-wedding ritual symbolizes the groom&apos;s
+                  joyful journey to marry the bride
                 </p>
               </div>
               <Image height={140} width={140} src={baraat} alt="baraat" />
@@ -112,7 +111,7 @@ const EventsPage = () => {
                   symbolizing mutual acceptance and the official beginning of
                   their journey as a couple. This ancient and celebratory
                   tradition is filled with pomp and joy as family and guests
-                  witness the couple's public declaration of love and
+                  witness the couple&apos;s public declaration of love and
                   commitment.
                 </p>
               </div>
@@ -125,9 +124,9 @@ const EventsPage = () => {
                 <p className="text-alice">
                   where the bride and groom circle a sacred fire, exchanging
                   vows and making seven solemn promises for their life together.
-                  Each round, or "phera" is a prayer for different aspects of a
-                  successful marriage, such as nourishment, strength,
-                  prosperity, loyalty, and eternal companionship.
+                  Each round, or &quot;phera&quot; is a prayer for different
+                  aspects of a successful marriage, such as nourishment,
+                  strength, prosperity, loyalty, and eternal companionship.
                 </p>
               </div>
 
