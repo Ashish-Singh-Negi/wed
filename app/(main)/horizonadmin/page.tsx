@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import { div } from "framer-motion/client";
 import { useEffect, useState } from "react";
 
 interface RSVP {
@@ -11,7 +12,7 @@ interface RSVP {
 }
 
 const HorizonAdminPage = () => {
-  const [rsvps, setRsvps] = useState<RSVP[]>();
+  const [rsvps, setRsvps] = useState<RSVP[]>([]);
 
   const getAllRSVPs = async () => {
     try {
@@ -32,7 +33,7 @@ const HorizonAdminPage = () => {
 
   return (
     <div className="min-h-screen bg-[#bba582]/80 relative overflow-hidden p-4">
-      {rsvps &&
+      {rsvps?.length >= 1 ? (
         rsvps.map((rsvp) => (
           <div
             key={rsvp.email}
@@ -43,7 +44,12 @@ const HorizonAdminPage = () => {
             <p className="text-2xl">Email : {rsvp.email}</p>
             <p className="text-2xl">Attending : {rsvp.attending}</p>
           </div>
-        ))}
+        ))
+      ) : (
+        <div className="font-alice text-center text-2xl text-white">
+          No RSVP yet
+        </div>
+      )}
     </div>
   );
 };
