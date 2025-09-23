@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/app/components/Navigation";
+import axios from "axios";
 
 export default function RSVPPage() {
   const [formData, setFormData] = useState({
@@ -20,9 +21,16 @@ export default function RSVPPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("RSVP Submitted:", formData);
+
+    const { data } = await axios.post(`/api/rsvps`, {
+      ...formData,
+    });
+
+    console.log(data);
+
     alert("Thank you for your RSVP!");
   };
 
