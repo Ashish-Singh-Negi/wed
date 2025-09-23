@@ -1,7 +1,6 @@
 "use client";
 
 import axios from "axios";
-import { div } from "framer-motion/client";
 import { useEffect, useState } from "react";
 
 interface RSVP {
@@ -32,24 +31,29 @@ const HorizonAdminPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#bba582]/80 relative overflow-hidden p-4">
-      {rsvps?.length >= 1 ? (
-        rsvps.map((rsvp) => (
-          <div
-            key={rsvp.email}
-            className="h-fit w-full bg-[#bba582] font-alice px-2 py-1 rounded-md text-white"
-          >
-            <p className="text-2xl">Name : {rsvp.name}</p>
-            <p className="text-2xl">Contact : {rsvp.contact}</p>
-            <p className="text-2xl">Email : {rsvp.email}</p>
-            <p className="text-2xl">Attending : {rsvp.attending}</p>
-          </div>
-        ))
-      ) : (
-        <div className="font-alice text-center text-2xl text-white">
-          No RSVP yet
+    <div className="min-h-screen bg-[#bba582]/90 relative overflow-hidden p-4">
+      <main className="h-full w-full text-white font-alice">
+        <div className="grid grid-cols-4 wrap-break-word">
+          <p className="border-[1px] text-left px-2 py-1 font-semibold">Name</p>
+          <p className="border-[1px] text-left px-2 py-1 font-semibold">
+            Contact
+          </p>
+          <p className="border-[1px] text-left px-2 py-1 font-semibold">
+            email
+          </p>
+          <p className="border-[1px] text-left px-2 py-1 font-semibold">
+            Attending
+          </p>
         </div>
-      )}
+        {rsvps.map((rsvp) => (
+          <div key={rsvp.email} className="grid grid-cols-4 wrap-break-word">
+            <p className="border-[1px] px-2 py-1">{rsvp.name}</p>
+            <p className="border-[1px] px-2 py-1">{rsvp.contact}</p>
+            <p className="border-[1px] px-2 py-1">{rsvp.email}</p>
+            <p className="border-[1px] px-2 py-1">{rsvp.attending}</p>
+          </div>
+        ))}
+      </main>
     </div>
   );
 };
