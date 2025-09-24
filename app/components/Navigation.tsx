@@ -7,10 +7,7 @@ import { Menu, X, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navigationItems = [
-  { name: "COVER", href: "/" },
-  { name: "COVER2", href: "/cover2" },
   { name: "WELCOME", href: "/welcome" },
-  { name: "WELCOME2", href: "/welcome2" },
   { name: "OUR STORY", href: "/our-story" },
   { name: "EVENTS", href: "/events" },
   { name: "RSVP", href: "/rsvp" },
@@ -50,7 +47,7 @@ export default function Navigation() {
               Ria & Vivek - Wedding Celebrations
             </h1>
             <p className="text-amber-800 text-sm lg:text-base tracking-widest uppercase">
-              March 06<sup>Th</sup>, 2026
+              March 6<sup>Th</sup>, 2026
             </p>
           </div>
 
@@ -59,7 +56,9 @@ export default function Navigation() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-xs lg:text-sm tracking-wider transition-colors hover:text-amber-900 ${
+                className={`${
+                  pathname === item.href && "border-b-2"
+                } text-xs lg:text-sm tracking-wider transition-colors hover:text-amber-900 ${
                   pathname === item.href
                     ? "text-amber-900 font-medium"
                     : "text-amber-800"

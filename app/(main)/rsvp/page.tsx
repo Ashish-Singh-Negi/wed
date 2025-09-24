@@ -50,7 +50,7 @@ export default function RSVPPage() {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen pt-[12%]">
       <Navigation />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-12 md:py-16">

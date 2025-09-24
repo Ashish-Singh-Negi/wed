@@ -64,7 +64,7 @@ export default function WelcomePage() {
                     <p>
                       Please join us in celebrating our wedding on{" "}
                       <span className="font-semibold text-[#c4a882]">
-                        March 05th - 06th, 2026
+                        March 5th - 6th, 2026
                       </span>{" "}
                       as we gather to share love, laughter, and blessings.
                     </p>
@@ -75,7 +75,7 @@ export default function WelcomePage() {
                   </div>
                   <div className="flex justify-center items-center gap-2 sm:gap-3 text-black">
                     <p className="text-sm sm:text-lg font-alice">
-                      With love, <br />{" "}
+                      With love <br />{" "}
                       <span className="font-english text-3xl text-[#c4a882]">
                         Ria &amp; Vivek
                       </span>

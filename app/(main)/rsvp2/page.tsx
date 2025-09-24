@@ -45,7 +45,7 @@ export default function RSVPPage2() {
   ];
 
   return (
-    <div className="relative bg-white min-h-screen overflow-x-hidden">
+    <div className="relative bg-white min-h-screen overflow-x-hidden pt-[12%]">
       <Navigation />
 
       {/* Side Decorations */}
