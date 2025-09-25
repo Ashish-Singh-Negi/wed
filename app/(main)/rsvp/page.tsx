@@ -24,14 +24,6 @@ export default function RSVPPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     alert("Thank you for your RSVP!");
-
-    try {
-      await axios.post(`/api/rsvps`, {
-        ...formData,
-      });
-    } catch (error) {
-      console.error(error);
-    }
   };
 
   // Animation variants

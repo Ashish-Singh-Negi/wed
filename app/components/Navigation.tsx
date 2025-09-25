@@ -10,8 +10,7 @@ const navigationItems = [
   { name: "WELCOME", href: "/welcome" },
   { name: "OUR STORY", href: "/our-story" },
   { name: "EVENTS", href: "/events" },
-  { name: "RSVP", href: "/rsvp" },
-  { name: "RSVP2", href: "/rsvp2" },
+  { name: "RSVP", href: "/rsvp2" },
   { name: "FAQs", href: "/faqs" },
 ];
 
