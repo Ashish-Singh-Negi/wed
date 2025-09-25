@@ -36,13 +36,9 @@ export default function SmartCalendarButton() {
 
   return (
     <motion.button
-      whileHover={{
-        scale: 1.05,
-        backgroundColor: "rgba(255,255,255,0.15)",
-      }}
       whileTap={{ scale: 0.95 }}
       onClick={handleClick}
-      className="font-calibri text-xs sm:text-sm uppercase tracking-[0.15em] px-8 py-3 border border-white/70 text-white bg-transparent rounded-sm transition-all duration-300 backdrop-blur-sm shadow-lg"
+      className="font-calibri text-xs sm:text-sm uppercase tracking-[0.15em] px-8 py-3 bg-white text-[#d6c7a1] hover:scale-105 active:scale-95 rounded-sm transition-all duration-300 backdrop- shadow-lg"
     >
       Add To My Calendar
     </motion.button>

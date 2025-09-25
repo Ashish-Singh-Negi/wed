@@ -57,9 +57,9 @@ export default function WelcomePage() {
         </p>
 
         {/* Add to Calendar */}
-        <div className="mb-6 w-full">
+        {/* <div className="mb-6 w-full">
           <SmartCalendarButton />
-        </div>
+        </div> */}
 
         {/* Welcome Note Button */}
         <div className="mb-6 w-full">
