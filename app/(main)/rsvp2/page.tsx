@@ -65,7 +65,7 @@ export default function RSVPPage2() {
     return (
       <div className="min-h-screen w-full bg-[#d6c7a1]/90 flex flex-col justify-center items-center font-english text-white gap-4">
         <p className="w-80 text-xl font-alice text-center">
-          Dont forget to save the wedding dates to your calendar
+          Don&apos;t forget to save the wedding dates to your calendar
         </p>
         <SmartCalendarButton />
         <p className="text-5xl">Thank you</p>
