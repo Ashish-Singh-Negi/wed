@@ -5,6 +5,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Navigation from "@/app/components/Navigation";
 import axios from "axios";
+import SmartCalendarButton from "@/app/components/SmartCalendarButton";
 
 export default function RSVPPage2() {
   const [formData, setFormData] = useState({
@@ -62,8 +63,12 @@ export default function RSVPPage2() {
 
   if (success)
     return (
-      <div className="min-h-screen w-full bg-[#d6c7a1]/90 flex justify-center items-center font-english text-6xl text-white">
-        Thank you
+      <div className="min-h-screen w-full bg-[#d6c7a1]/90 flex flex-col justify-center items-center font-english text-white gap-4">
+        <p className="w-80 text-xl font-alice text-center">
+          Dont forget to save the wedding dates to your calendar
+        </p>
+        <SmartCalendarButton />
+        <p className="text-5xl">Thank you</p>
       </div>
     );
 
