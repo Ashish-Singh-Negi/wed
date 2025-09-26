@@ -139,9 +139,9 @@ export default function OurStoryPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#bba582]/80 relative overflow-hidden">
+    <div className="min-h-screen bg-white relative overflow-hidden">
       <Navigation />
-      <div className="pt-[12%]">
+      <div className="pt-[12%] bg-gradient-to-r from-[#FFE8DB] to-white">
         {/* <div className="hidden lg:block">
           <SideNavigation
             currentStory={currentStory}
@@ -214,98 +214,99 @@ export default function OurStoryPage() {
         </div>
 
         {/* Modal (shared for mobile + tablet + desktop) */}
-        <AnimatePresence>
-          {isModalOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 bg-[#bba582] lg:bg-black"
-              onClick={() => setIsModalOpen(false)}
-            >
-              <motion.div
-                initial={{ y: "-100%" }}
-                animate={{ y: "0%" }}
-                exit={{ y: "-100%" }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="relative w-full h-full flex flex-col lg:flex-row items-center justify-center"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Left: Image */}
-                <div className="relative w-full h-[80%] lg:h-full lg:w-1/2 flex items-center justify-center">
-                  <Image
-                    src={stories[currentStory].image || "/placeholder.svg"}
-                    alt={stories[currentStory].title}
-                    fill
-                    className="object-contain"
-                    sizes="100vw"
-                    priority
-                  />
-                </div>
-
-                {/* Right: Story info */}
-                <div
-                  className="relative w-full h-[20%] lg:h-full lg:w-1/2
-                  flex flex-col justify-end lg:justify-center
-                  items-center lg:items-start
-                  bg-gradient-to-t from-black/80 via-black/40 to-transparent lg:bg-transparent
-                  p-6 md:p-8"
-                >
-                  <div className="max-w-2xl lg:mx-0 text-center lg:text-left">
-                    <h2 className="text-2xl md:text-4xl italic text-white mb-2">
-                      {stories[currentStory].title}
-                    </h2>
-                    <p className="text-sm md:text-base text-white/80 mb-4">
-                      {stories[currentStory].date}
-                    </p>
-                    <div className="text-sm md:text-base text-white/90 leading-relaxed">
-                      {stories[currentStory].content
-                        .split("\n\n")
-                        .slice(0, 2)
-                        .map((paragraph, index) => (
-                          <p key={index} className="mb-2">
-                            {paragraph}
-                          </p>
-                        ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Navigation arrows */}
-                <button
-                  onClick={handlePreviousImage}
-                  className="absolute left-4 top-[40%] -translate-y-1/2 text-white/80 hover:text-white text-4xl md:text-6xl transition-all duration-200 hover:scale-110 z-10"
-                  aria-label="Previous image"
-                >
-                  ‹
-                </button>
-                <button
-                  onClick={handleNextImage}
-                  className="absolute right-4 top-[40%] -translate-y-1/2 text-white/80 hover:text-white text-4xl md:text-6xl transition-all duration-200 hover:scale-110 z-10"
-                  aria-label="Next image"
-                >
-                  ›
-                </button>
-                {/* Close button */}
-                <button
-                  onClick={() => setIsModalOpen(false)}
-                  className="absolute top-4 right-4 text-white/80 hover:text-white text-3xl md:text-4xl transition-all duration-200 hover:scale-110 z-10"
-                  aria-label="Close modal"
-                >
-                  ✕
-                </button>
-                {/* Image counter */}
-                <div className="absolute top-4 left-4 text-white/80 text-sm md:text-base z-10">
-                  {currentStory + 1} / {stories.length}
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </div>
   );
 }
+
+//  <AnimatePresence>
+//           {isModalOpen && (
+//             <motion.div
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: 1 }}
+//               exit={{ opacity: 0 }}
+//               className="fixed inset-0 z-50 bg-[#bba582] lg:bg-black"
+//               onClick={() => setIsModalOpen(false)}
+//             >
+//               <motion.div
+//                 initial={{ y: "-100%" }}
+//                 animate={{ y: "0%" }}
+//                 exit={{ y: "-100%" }}
+//                 transition={{ duration: 0.5, ease: "easeInOut" }}
+//                 className="relative w-full h-full flex flex-col lg:flex-row items-center justify-center"
+//                 onClick={(e) => e.stopPropagation()}
+//               >
+//                 {/* Left: Image */}
+//                 <div className="relative w-full h-[80%] lg:h-full lg:w-1/2 flex items-center justify-center">
+//                   <Image
+//                     src={stories[currentStory].image || "/placeholder.svg"}
+//                     alt={stories[currentStory].title}
+//                     fill
+//                     className="object-contain"
+//                     sizes="100vw"
+//                     priority
+//                   />
+//                 </div>
+
+//                 {/* Right: Story info */}
+//                 <div
+//                   className="relative w-full h-[20%] lg:h-full lg:w-1/2
+//                   flex flex-col justify-end lg:justify-center
+//                   items-center lg:items-start
+//                   bg-gradient-to-t from-black/80 via-black/40 to-transparent lg:bg-transparent
+//                   p-6 md:p-8"
+//                 >
+//                   <div className="max-w-2xl lg:mx-0 text-center lg:text-left">
+//                     <h2 className="text-2xl md:text-4xl italic text-white mb-2">
+//                       {stories[currentStory].title}
+//                     </h2>
+//                     <p className="text-sm md:text-base text-white/80 mb-4">
+//                       {stories[currentStory].date}
+//                     </p>
+//                     <div className="text-sm md:text-base text-white/90 leading-relaxed">
+//                       {stories[currentStory].content
+//                         .split("\n\n")
+//                         .slice(0, 2)
+//                         .map((paragraph, index) => (
+//                           <p key={index} className="mb-2">
+//                             {paragraph}
+//                           </p>
+//                         ))}
+//                     </div>
+//                   </div>
+//                 </div>
+
+//                 {/* Navigation arrows */}
+//                 <button
+//                   onClick={handlePreviousImage}
+//                   className="absolute left-4 top-[40%] -translate-y-1/2 text-white/80 hover:text-white text-4xl md:text-6xl transition-all duration-200 hover:scale-110 z-10"
+//                   aria-label="Previous image"
+//                 >
+//                   ‹
+//                 </button>
+//                 <button
+//                   onClick={handleNextImage}
+//                   className="absolute right-4 top-[40%] -translate-y-1/2 text-white/80 hover:text-white text-4xl md:text-6xl transition-all duration-200 hover:scale-110 z-10"
+//                   aria-label="Next image"
+//                 >
+//                   ›
+//                 </button>
+//                 {/* Close button */}
+//                 <button
+//                   onClick={() => setIsModalOpen(false)}
+//                   className="absolute top-4 right-4 text-white/80 hover:text-white text-3xl md:text-4xl transition-all duration-200 hover:scale-110 z-10"
+//                   aria-label="Close modal"
+//                 >
+//                   ✕
+//                 </button>
+//                 {/* Image counter */}
+//                 <div className="absolute top-4 left-4 text-white/80 text-sm md:text-base z-10">
+//                   {currentStory + 1} / {stories.length}
+//                 </div>
+//               </motion.div>
+//             </motion.div>
+//           )}
+//         </AnimatePresence>
 
 // <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:hidden">
 //               {stories.map((story, index) => (
