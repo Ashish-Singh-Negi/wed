@@ -58,17 +58,17 @@ const HorizonAdminPage = () => {
     return (
       <section className="min-h-screen w-full bg-gradient-to-r from-[#FFE8DB] to-white flex flex-col justify-center items-center">
         <p className="text-red-500">{error && error}</p>
-        <div className="p-10 flex flex-col gap-4">
+        <div className="w-80 flex flex-col gap-4 ">
           <p className="mb-4 text-3xl text-center font-alice">HorizonAdmin</p>
           <input
-            className="px-2 py-1 rounded-sm h-10 w-96 outline-none bg-gray-200 text-gray-800 placeholder:text-gray-800-600 font-mediumb-2border-blue-500 transition-all"
+            className="px-2 py-1 rounded-sm h-10 w-full outline-none bg-gray-200 text-gray-800 placeholder:text-gray-800-600 font-mediumb-2border-blue-500 transition-all"
             onChange={(e) => setUsername(e.target.value)}
             value={username || ""}
             type="text"
             placeholder="username"
           />
           <input
-            className="px-2 py-1 rounded-sm h-10 w-96 outline-none bg-gray-200 text-gray-80 placeholder:text-gray-80-600 font-mediub-2 dark:border-black focus:border-blue-500 transition-all"
+            className="px-2 py-1 rounded-sm h-10 w-full outline-none bg-gray-200 text-gray-80 placeholder:text-gray-80-600 font-mediub-2 dark:border-black focus:border-blue-500 transition-all"
             onChange={(e) => setPassword(e.target.value)}
             value={password || ""}
             type="text"
