@@ -128,15 +128,15 @@ export default function OurStoryPage() {
   //   setCurrentStory((prev) => (prev + 1) % stories.length);
   // };
 
-  const handlePreviousImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentStory((prev) => (prev - 1 + stories.length) % stories.length);
-  };
+  // const handlePreviousImage = (e: React.MouseEvent) => {
+  //   e.stopPropagation();
+  //   setCurrentStory((prev) => (prev - 1 + stories.length) % stories.length);
+  // };
 
-  const handleNextImage = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setCurrentStory((prev) => (prev + 1) % stories.length);
-  };
+  // const handleNextImage = (e: React.MouseEvent) => {
+  //   e.stopPropagation();
+  //   setCurrentStory((prev) => (prev + 1) % stories.length);
+  // };
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
