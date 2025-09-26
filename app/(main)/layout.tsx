@@ -15,7 +15,7 @@ export default function SiteLayout({
       <div
         className="
           fixed inset-0 z-0
-          bg-no-repeat bg-cover
+          bg-repeat-y bg-cover
           w-full h-full
           bg-[url('/mobile-bng.jpg')]
           md:bg-[url('/bg.jpg')]

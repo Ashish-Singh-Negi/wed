@@ -150,7 +150,14 @@ export default function Navigation() {
                           : "text-gray-800 hover:text-amber-600"
                       }`}
                     >
-                      {item.name}
+                      <span
+                        className={`${
+                          pathname === item.href &&
+                          "border-b-2 border-amber-700"
+                        }`}
+                      >
+                        {item.name}
+                      </span>
                     </Link>
                   ))}
                 </nav>
@@ -226,11 +233,18 @@ export default function Navigation() {
                       onClick={() => setIsOpen(false)}
                       className={`block py-4 text-center tracking-wider text-sm ${
                         pathname === item.href
-                          ? "text-amber-700 font-medium"
+                          ? "text-amber-700 font-medium border-b-2"
                           : "text-gray-800 hover:text-amber-600"
                       }`}
                     >
-                      {item.name}
+                      <span
+                        className={`${
+                          pathname === item.href &&
+                          "border-b-2 border-amber-700"
+                        }`}
+                      >
+                        {item.name}
+                      </span>
                     </Link>
                   ))}
                 </nav>

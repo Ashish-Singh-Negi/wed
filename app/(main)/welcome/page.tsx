@@ -43,7 +43,7 @@ export default function WelcomePage() {
       p-[5%] px-[7%] lg:px-[15%]
       border-[10px] border-white/50
       shadow-xl rounded-lg
-      max-w-xl mx-auto space-y-4 lg:h-full text-gray-700 text-base leading-relaxed
+      max-w-xl mx-auto space-y-4 lg:h-full text-gray-700 text-base leading-relaxed bg-gradient-to-r from-[#c4a882] to-white
     "
               >
                 <div className="flex flex-col font-alice justify-center gap-6">

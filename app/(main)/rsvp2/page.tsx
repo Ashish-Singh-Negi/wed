@@ -120,7 +120,7 @@ export default function RSVPPage2() {
               className="text-[#5a4b2d] text-center mb-6 sm:mb-8 md:mb-10 text-2xl sm:text-4xl md:text-5xl font-trajanpro"
               style={{ marginTop: "5rem" }}
             >
-              RSVP
+              RiViSP
             </motion.h1>
 
             {/* Form */}
@@ -199,7 +199,7 @@ export default function RSVPPage2() {
                   type="submit"
                   className="w-full bg-[#5a4b2d] text-white py-2 sm:py-3 rounded-lg font-medium font-trajanpro hover:bg-[#d6c7a1] hover:text-[#5a4b2d] transition"
                 >
-                  Submit RSVP
+                  Submit
                 </motion.button>
               </motion.div>
             </motion.form>
