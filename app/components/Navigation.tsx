@@ -10,6 +10,7 @@ const navigationItems = [
   { name: "WELCOME", href: "/welcome" },
   { name: "OUR STORY", href: "/our-story" },
   { name: "EVENTS", href: "/events" },
+  { name: "WED ESSENTIALS", href: "/wed-essentials" },
   { name: "RSVP", href: "/rsvp2" },
   { name: "FAQs", href: "/faqs" },
 ];
